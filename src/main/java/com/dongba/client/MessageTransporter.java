@@ -26,4 +26,12 @@ public class MessageTransporter {
 		return in.readObject();
 	}
 
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+	}
+
 }

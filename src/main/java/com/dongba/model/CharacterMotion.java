@@ -2,13 +2,13 @@ package com.dongba.model;
 
 import java.io.Serializable;
 
-public class CharacterMotion implements Serializable {
+public class CharacterMotion extends ClientMessage implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -5153139806296677435L;
-	
+
 	private String targetId;
 	
 	private int damage;
@@ -16,6 +16,7 @@ public class CharacterMotion implements Serializable {
 	public CharacterMotion(String targetId, int damage) {
 		this.targetId = targetId;
 		this.damage = damage;
+		type = MessageType.CHARACTERMOTION;
 	}
 
 	public String getTargetId() {
@@ -33,9 +34,11 @@ public class CharacterMotion implements Serializable {
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
-	
+
+	@Override
 	public String toString() {
-		return "targetId : " + targetId + ", damage : " + damage;
+		return "CharacterMotion [targetId=" + targetId + ", damage=" + damage
+				+ "]";
 	}
 
 }

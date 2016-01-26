@@ -7,12 +7,12 @@ import javax.swing.JOptionPane;
 
 import com.dongba.model.CharacterMotion;
 
-public class MotionService extends Thread {
+public class MotionClient extends Thread {
 	
 	private MessageTransporter mt;
 	private JFrame frame;
 
-	public MotionService(MessageTransporter mt) {
+	public MotionClient(MessageTransporter mt) {
 		this.mt = mt;
 		this.frame = new JFrame("input motion");
 	}
@@ -22,6 +22,10 @@ public class MotionService extends Thread {
 			while (true) {
 				String motion = JOptionPane.showInputDialog(frame, "input character motion.");
 				CharacterMotion cm = parseMotion(motion);
+				if (cm == null) {
+					System.out.println("wrong motion");
+					continue;
+				}
 				mt.send(cm);
 			}
 		} catch (IOException e) {
@@ -32,6 +36,9 @@ public class MotionService extends Thread {
 
 	private CharacterMotion parseMotion(String motion) {
 		String[] split = motion.split(" ");
+		if (split.length != 2) {
+			return null;
+		}
 		return new CharacterMotion(split[0], Integer.parseInt(split[1]));
 	}
 

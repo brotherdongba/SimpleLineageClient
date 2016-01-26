@@ -3,11 +3,13 @@ package com.dongba.client;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ChatingService extends Thread {
+import com.dongba.model.ChatMessage;
+
+public class ChattingClient extends Thread {
 
 	private MessageTransporter mt;
 
-	public ChatingService(MessageTransporter mt) {
+	public ChattingClient(MessageTransporter mt) {
 		this.mt = mt;
 	}
 	
@@ -17,7 +19,11 @@ public class ChatingService extends Thread {
 			while (true) {
 				System.out.print("input message > ");
 				String inputString = scanner.nextLine();
-				mt.send(inputString);
+				if (inputString == null || inputString.isEmpty()) {
+					continue;
+				}
+				ChatMessage chatMessage = new ChatMessage(mt.getAccountId(), inputString);
+				mt.send(chatMessage);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

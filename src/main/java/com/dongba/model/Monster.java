@@ -2,7 +2,7 @@ package com.dongba.model;
 
 import java.io.Serializable;
 
-public class Monster implements Serializable {
+public class Monster extends ClientMessage implements Serializable {
 	
 	/**
 	 * 
@@ -19,6 +19,7 @@ public class Monster implements Serializable {
 		this.id = id;
 		this.name = name;
 		this.hp = hp;
+		type = MessageType.MONSTER;
 	}
 
 	public String getId() {

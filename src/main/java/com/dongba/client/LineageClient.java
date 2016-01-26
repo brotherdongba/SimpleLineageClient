@@ -17,8 +17,8 @@ public class LineageClient {
 
 	private void start() throws IOException {
 		new ServerMessageReciever(mt).start();
-		new ChatingService(mt).start();
-		new MotionService(mt).start();
+		new ChattingClient(mt).start();
+		new MotionClient(mt).start();
 	}
 	
 	@SuppressWarnings("resource")
