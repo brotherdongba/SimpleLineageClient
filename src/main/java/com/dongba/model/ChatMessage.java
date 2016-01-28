@@ -2,7 +2,7 @@ package com.dongba.model;
 
 import java.io.Serializable;
 
-public class ChatMessage extends ClientMessage implements Serializable {
+public class ChatMessage implements Serializable {
 
 	/**
 	 * 
@@ -12,11 +12,13 @@ public class ChatMessage extends ClientMessage implements Serializable {
 	private String characterId;
 	
 	private String message;
+
+	private int type;
 	
 	public ChatMessage(String characterId, String message) {
 		this.characterId = characterId;
 		this.message = message;
-		type = MessageType.CHATMESSAGE;
+		type = 2;
 	}
 
 	public String getCharacterId() {

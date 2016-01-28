@@ -39,7 +39,7 @@ public class MotionClient extends Thread {
 		if (split.length != 2) {
 			return null;
 		}
-		return new CharacterMotion(split[0], Integer.parseInt(split[1]));
+		return new CharacterMotion(mt.getAccountId(), split[0], Integer.parseInt(split[1]));
 	}
 
 }

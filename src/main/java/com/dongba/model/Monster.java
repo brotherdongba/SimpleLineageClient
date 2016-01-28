@@ -2,24 +2,29 @@ package com.dongba.model;
 
 import java.io.Serializable;
 
-public class Monster extends ClientMessage implements Serializable {
+public class Monster implements Serializable {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2235321415253057213L;
+	
+	private String fromCharacter;
 
 	private String id;
 	
 	private String name;
 	
 	private int hp;
+
+	private int type;
 	
-	public Monster(String id, String name, int hp) {
+	public Monster(String fromCharacter, String id, String name, int hp) {
+		this.fromCharacter = fromCharacter;
 		this.id = id;
 		this.name = name;
 		this.hp = hp;
-		type = MessageType.MONSTER;
+		type = 3;
 	}
 
 	public String getId() {
@@ -44,6 +49,14 @@ public class Monster extends ClientMessage implements Serializable {
 
 	public void setHp(int hp) {
 		this.hp = hp;
+	}
+
+	public String getFromCharacter() {
+		return fromCharacter;
+	}
+
+	public void setFromCharacter(String fromCharacter) {
+		this.fromCharacter = fromCharacter;
 	}
 
 	@Override

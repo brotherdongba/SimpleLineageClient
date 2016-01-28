@@ -16,6 +16,11 @@ public class LineageClient {
 	}
 
 	private void start() throws IOException {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+		}
+		new SessionManager(mt);
 		new ServerMessageReciever(mt).start();
 		new ChattingClient(mt).start();
 		new MotionClient(mt).start();
