@@ -47,7 +47,7 @@ public class Character implements Serializable {
 		this.str = str;
 	}
 
-	public Position getPos() {
+	public Position getPosition() {
 		return pos;
 	}
 

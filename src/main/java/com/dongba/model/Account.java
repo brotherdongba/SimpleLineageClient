@@ -8,7 +8,7 @@ public class Account implements Serializable {
 	
 	private String id;
 	
-	private Character character;
+	private String currCharacterName;
 
 	public Account(String id) {
 		this.id = id;
@@ -22,12 +22,12 @@ public class Account implements Serializable {
 		this.id = id;
 	}
 
-	public Character getCharacter() {
-		return character;
+	public String getCurrCharacterName() {
+		return currCharacterName;
 	}
 
-	public void setCharacter(Character character) {
-		this.character = character;
+	public void setCurrCharacterName(String currCharacterName) {
+		this.currCharacterName = currCharacterName;
 	}
 	
 }

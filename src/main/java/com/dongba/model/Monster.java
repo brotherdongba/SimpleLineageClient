@@ -4,9 +4,6 @@ import java.io.Serializable;
 
 public class Monster implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2235321415253057213L;
 	
 	private String fromCharacter;
@@ -16,6 +13,8 @@ public class Monster implements Serializable {
 	private String name;
 	
 	private int hp;
+	
+	private Position pos;
 
 	private int type;
 	
@@ -57,6 +56,14 @@ public class Monster implements Serializable {
 
 	public void setFromCharacter(String fromCharacter) {
 		this.fromCharacter = fromCharacter;
+	}
+	
+	public Position getPosition() {
+		return pos;
+	}
+
+	public void setPos(Position pos) {
+		this.pos = pos;
 	}
 
 	@Override
