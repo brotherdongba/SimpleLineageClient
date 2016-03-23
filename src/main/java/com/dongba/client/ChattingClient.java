@@ -3,7 +3,7 @@ package com.dongba.client;
 import java.io.IOException;
 import java.util.Scanner;
 
-import com.dongba.model.ChatMessage;
+import com.dongba.dto.ChatMessage;
 
 public class ChattingClient extends Thread {
 

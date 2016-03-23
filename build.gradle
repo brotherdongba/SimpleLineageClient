@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.7
 version = '1.0'
 jar {
     manifest {
@@ -12,10 +12,14 @@ jar {
 
 repositories {
     mavenCentral()
+    maven {
+    	url 'http://192.168.0.7:8082/artifactory/libs-snapshot-local'
+    }
 }
 
 dependencies {
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    compile(group: 'com.dongba.common', name: 'SimpleLineageCommon', version: '1.0.0-SNAPSHOT')
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 

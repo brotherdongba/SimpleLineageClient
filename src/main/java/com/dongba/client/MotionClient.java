@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import com.dongba.model.CharacterMotion;
+import com.dongba.dto.CharacterMotion;
 
 public class MotionClient extends Thread {
 	

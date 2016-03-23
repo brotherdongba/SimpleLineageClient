@@ -2,7 +2,7 @@ package com.dongba.client;
 
 import java.io.IOException;
 
-import com.dongba.model.Account;
+import com.dongba.dto.Account;
 
 public class SessionManager {
 	
